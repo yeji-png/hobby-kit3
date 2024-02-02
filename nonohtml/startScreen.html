@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../nonocss/starScreen.css" />
+    <title>Hobby Kit</title>
+  </head>
+  <body>
+    <div class="start-screen">
+      <div class="image-container">
+        <img src="../nonographic/hobbykit.png" alt="00" />
+      </div>
+
+      <button class="prev-btn" onclick="history.back()">
+        <img src="../nonographic/back.png" alt="Back" />
+      </button>
+
+      <!-- game-selection-btn -->
+      <button
+        class="game-selection-btn"
+        onmouseover="changeImage('game-selection-btn', '02')"
+        onmouseout="resetImage('game-selection-btn')"
+        onclick="window.location.href='../nonohtml/gameSelectionScreen.html'"
+      >
+        <img id="gameBtnImg" src="../nonographic/game01.png" alt="Game" />
+      </button>
+
+      <!-- tutorial-btn -->
+      <button
+        id="buttontutorial"
+        class="tutorial-btn"
+        onmouseover="changeImage('tutorial-btn', '02')"
+        onmouseout="resetImage('tutorial-btn')"
+      >
+        <img
+          id="tutorialBtnImg"
+          src="../nonographic/tutorial01.png"
+          alt="Tutorial"
+        />
+      </button>
+    </div>
+
+    <div class="tutorial-screen">
+      <div id="overlaytutorial">
+        <div id="popuptutorial">
+          <div class="popupcontrolstutorial">
+            <span id="popupclosetutorial">X</span>
+          </div>
+          <div class="popupcontenttutorial">
+            <h1>Some Popup Content</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../nonojs/main.js"></script>
+  </body>
+</html>

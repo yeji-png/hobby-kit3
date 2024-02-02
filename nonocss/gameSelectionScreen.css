@@ -1,0 +1,385 @@
+/*@font-face {
+  font-family: RetrcadeRegular;
+  src: url("../nonogram/PixgamerRegular.woff") format("woff");
+
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+body {
+  background-color: #bef5fc;
+  background-image: url("../nonographic/hobbykit.png");
+  background-size: auto 900px; /* 배경 이미지를 가로는 자동, 세로는 900px로 설정 */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  overflow: scroll;
+  cursor: url("../nonogram/cursor.png"), auto;
+}
+.container-wrapper {
+  display: flex;
+}
+
+.game-selection-screen {
+  background-color: transparent;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-left: 5px;
+  z-index: 30;
+  overflow-y: auto;
+  width: 65px;
+  z-index: 1;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: url("../nonogram/cursor.png"), auto;
+}
+
+.graphic-container {
+  background-color: transparent;
+
+  flex: 1;
+  width: 700px;
+  height: 100%;
+
+  margin-top: auto;
+  margin-left: auto;
+  overflow-y: auto;
+}
+.image-container {
+  max-width: 100%;
+  width: auto;
+}
+.image-container img {
+  width: auto;
+  height: 800px;
+}
+
+.tutorial-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 300;
+  bottom: 5px;
+  right: 5px;
+  position: fixed;
+}
+.back-to-start-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+  bottom: 5px;
+  left: 5px;
+  position: fixed;
+}
+.tutorial-btn img,
+.back-to-start-btn img,
+.prev-btn img {
+  width: 30px; /* Ensure the images take up the full button space */
+}
+
+.prev-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+  top: 5px;
+  left: 5px;
+  position: fixed;
+}
+
+.prev-btn:hover,
+.back-to-start-btn:hover,
+.tutorial-btn:hover {
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  cursor: url("../nonogram/cursor.png"), auto;
+}
+
+.game-selection-btn {
+  font-size: 16px;
+  padding: 8px 15px;
+
+  border: 1px solid;
+  border-radius: 60%;
+  cursor: pointer;
+  width: 5%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff, #8b8b8b);
+  cursor: url("../nonogram/cursor.png"), auto;
+}
+
+.game-btn {
+  background-color: #bef5fc;
+
+  margin-right: auto;
+
+  border: none;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: RetrcadeRegular, sans-serif;
+  font-size: 30px;
+
+  padding: 10px 20px;
+  color: #414141;
+
+  width: 50px;
+  height: 40px;
+  z-index: 1;
+}
+
+.graphic-container div img.image-01 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+  transform: translateX(1000px);
+}
+
+.graphic-container div img.image-02 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+  transform: translateX(100px);
+}
+
+.graphic-container div img.image-03 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+  transform: translateX(300px);
+}
+
+.graphic-container div img.image-04 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+
+  transform: translateX(350px);
+}
+
+.graphic-container div img.image-05 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+
+  transform: translateX(50px);
+}
+
+.graphic-container div img.image-06 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+  transform: translateX(180px);
+}
+
+.graphic-container div img.image-07 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+
+  transform: translateX(20px);
+}
+
+.graphic-container div img.image-08 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin: 30px;
+  transform: translateX(500px);
+}
+
+.graphic-container div img.image-09 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(200px);
+}
+
+.graphic-container div img.image-10 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(20px);
+}
+
+.graphic-container div img.image-11 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(400px);
+}
+
+.graphic-container div img.image-12 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(300px);
+}
+
+.graphic-container div img.image-13 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(300px);
+}
+
+.graphic-container div img.image-14 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 100px;
+  transform: translateX(100px);
+}
+
+.graphic-container div img.image-15 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(380px);
+}
+
+.graphic-container div img.image-16 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+
+  transform: translateX(250px);
+}
+
+.graphic-container div img.image-17 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+
+  transform: translateX(250px);
+}
+
+.graphic-container div img.image-18 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 100px;
+  transform: translateX(580px);
+}
+
+.graphic-container div img.image-19 {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 50px;
+  transform: translateX(80px);
+}
+.graphic-container div {
+  position: relative;
+  overflow: hidden;
+}
+
+.graphic-container div img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.graphic-container div .image-text {
+  background-color: rgba(233, 233, 233, 0.423);
+  font-family: "PixgamerRegular", RetrcadeRegular, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #ffffff;
+  font-size: 50px;
+  transition: opacity 0.3s ease;
+}
+/*grafik container animation*/
+
+.graphic-container div:hover img {
+  transform: scale(1.2);
+}
+
+.graphic-container div:hover .image-text {
+  opacity: 1;
+}
+.graphic-container .image-container .image-text {
+  color: #00000024;
+  transition: color 0.3s ease;
+}
+
+.graphic-container .image-container:hover .image-text {
+  color: #868686;
+}
+
+#overlaytutorial {
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(153, 153, 153, 0);
+  width: auto;
+  height: 100%;
+  opacity: 0.8;
+}
+#popuptutorial {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  width: 400px;
+  height: 400px;
+  z-index: 2000;
+}
+#popupclosetutorial {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.popupcontenttutorial {
+  padding: 10px;
+}
+#buttontutorial {
+  cursor: pointer;
+}
+
+/* 스크롤 바의 전체 스타일링 */
+::-webkit-scrollbar {
+  width: 10px; /* 스크롤 바의 너비 */
+}
+
+/* 스크롤 바의 트랙 (바의 배경) 스타일링 */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* 트랙의 색상 */
+}
+
+/* 스크롤 바의 핸들 (스크롤 바 자체) 스타일링 */
+::-webkit-scrollbar-thumb {
+  background-color: transparent /* 핸들의 색상 */
+  border-radius: 0px; /* 핸들의 모서리 반경 */
+}
+
+/* 스크롤 바 위에 마우스 오버 시 핸들 스타일링 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: transparent /* 마우스 오버 시의 핸들 색상 */
+}

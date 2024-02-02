@@ -1,0 +1,105 @@
+@font-face {
+  font-family: RetrcadeRegular;
+  src: url("../nonogram/PixgamerRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #bef5fc;
+  align-items: center;
+  height: 600px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  margin: 0;
+}
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  max-width: 100%;
+  width: auto;
+}
+.image-container img {
+  width: auto;
+  height: 900px;
+}
+
+.tutorial-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 300;
+  bottom: 5px;
+  right: 5px;
+  position: fixed;
+}
+.game-selection-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+  bottom: 5px;
+  left: 5px;
+  position: fixed;
+}
+.tutorial-btn img,
+.game-selection-btn img,
+.prev-btn img {
+  width: 30px; /* Ensure the images take up the full button space */
+}
+
+.prev-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+  top: 5px;
+  left: 5px;
+  position: fixed;
+}
+.prev-btn:hover,
+.game-selection-btn:hover,
+.tutorial-btn:hover {
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  cursor: url("../nonogram/cursor.png"), auto;
+}
+
+#overlaytutorial {
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(153, 153, 153, 0);
+  width: auto;
+  height: 100%;
+  opacity: 0.8;
+}
+#popuptutorial {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  width: 400px;
+  height: 400px;
+  z-index: 2000;
+}
+#popupclosetutorial {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.popupcontenttutorial {
+  padding: 10px;
+}
+#buttontutorial {
+  cursor: pointer;
+}

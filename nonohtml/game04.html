@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ballet"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../nonocss/game.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>04. socks</h1>
+    </div>
+
+    <img
+      id="completedImage"
+      src="../nonogram/04.png"
+      alt="Completed"
+      style="display: none"
+    />
+    <div class="game-screen">
+      <button
+        class="back-to-start-btn"
+        onclick="window.location.href='startScreen.html'"
+      >
+        <img src="../nonographic/hint01.png" alt="home" />
+      </button>
+      <button class="prev-btn" onclick="history.back()">
+        <img src="../nonographic/back.png" alt="Back" />
+      </button>
+      <button id="buttontutorial" class="tutorial-btn">
+        <img src="../nonographic/tutorial01.png" alt="Tutorial" />
+      </button>
+      <button id="buttonsolve" class="hint-btn">
+        <img src="../nonographic/hint01.png" alt="hint" />
+      </button>
+
+      <div class="game" id="zoomableGame">
+        <div class="thumbnail"></div>
+        <div class="col-clues"></div>
+        <div class="row-clues"></div>
+        <div class="container"></div>
+      </div>
+
+      <button class="setting-btn">...</button>
+    </div>
+    <div class="brush-board">
+      <button class="brush-btn">
+        <img src="../nonogram/brush-image.png" alt="Brush" class="button-img" />
+      </button>
+      <button class="x-btn">
+        <img src="../nonogram/x-image.png" alt="X" class="button-img" />
+      </button>
+      <button class="zoom-in-btn">
+        <img
+          src="../nonogram/zoom-in-image.png"
+          alt="Zoom In"
+          class="button-img"
+        />
+      </button>
+      <button class="zoom-out-btn">
+        <img
+          src="../nonogram/zoom-out-image.png"
+          alt="Zoom Out"
+          class="button-img"
+        />
+      </button>
+    </div>
+
+    <div class="tutorial-screen">
+      <div id="overlaytutorial">
+        <div id="popuptutorial">
+          <div class="popupcontrolstutorial">
+            <span id="popupclosetutorial">X</span>
+          </div>
+          <div class="popupcontenttutorial">
+            <h1>Some Popup Content</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlaysolve">
+      <div id="popupsolve">
+        <div class="popupcontrolsslove">
+          <span id="popupclosesolve">X</span>
+        </div>
+        <div class="popupcontentsolve">
+          <h1>Some Popup Content</h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="../nonojs/game04.js"></script>
+  </body>
+</html>
