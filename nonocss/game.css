@@ -1,5 +1,5 @@
 body {
-  background-color: #d4fbff;
+  background-color: #cff5ff;
 
   cursor: url("../nonogram/cursor.png"), auto;
   display: flex;
@@ -40,8 +40,7 @@ body {
 .tutorial-btn:hover,
 .setting-btn:hover,
 .hint-btn:hover {
-  background-color: #43434349;
-  mix-blend-mode: difference;
+  background-color: #ffcff8;
 }
 .tutorial-btn {
   background-color: transparent;
@@ -77,9 +76,10 @@ body {
 }
 
 .hint-btn {
+  z-index: 2000;
   background-color: transparent;
   border: none;
-  z-index: 100;
+
   top: 5px;
   right: 5px;
   position: fixed;
@@ -97,7 +97,7 @@ body {
   z-index: 100;
   background-color: transparent;
 
-  height: 500px;
+  height: 700px;
   width: 100%;
   margin-top: 40px;
   margin-right: 10px;
@@ -107,7 +107,7 @@ body {
 
 .thumbnail {
   z-index: 1;
-  background-color: #787878;
+  background-color: #ffffff;
 
   grid-area: thumbnail;
   display: grid;
@@ -196,11 +196,11 @@ body {
   align-self: flex-end;
 }
 .game {
-  background-color: transparent;
+  background-color: #ffffff;
 
   margin: auto auto;
 
-  width: 470px;
+  width: 800px;
   height: auto;
   position: relative;
   display: grid;
@@ -222,7 +222,7 @@ body {
 }
 
 .pixel {
-  background-color: rgb(242, 242, 242);
+  background-color: #ffffff;
   border-radius: px;
   aspect-ratio: 1;
   position: relative;

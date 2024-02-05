@@ -5,7 +5,7 @@
   font-style: normal;
 }
 body {
-  background-color: #bef5fc;
+  background-color: #cff5ff;
   align-items: center;
   height: 600px;
   min-height: 100vh;
@@ -88,8 +88,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(255, 255, 255);
-  width: 400px;
-  height: 400px;
+  width: 800px;
+  height: 800px;
   z-index: 2000;
 }
 #popupclosetutorial {

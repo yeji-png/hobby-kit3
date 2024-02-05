@@ -48,26 +48,3 @@ buttontutorial.onclick = function () {
   overlaytutorial.style.display = "block";
   popuptutorial.style.display = "block";
 };
-// 버튼 이미지 변경
-function changeImage(btnClass, suffix) {
-  const img = document.querySelector(`.${btnClass} img`);
-
-  // 이미지 변경
-  img.src = `../nonographic/${btnClass}-${suffix}.png`;
-
-  // 커서를 올렸을 때만 트랜지션 효과 적용
-  if (suffix === "02") {
-    img.style.transition = "all 0.3s";
-  } else {
-    img.style.transition = "none"; // 커서를 올리지 않았을 때 트랜지션 효과 제거
-  }
-}
-
-// 마우스가 버튼에서 빠져나갈 때 원래 이미지로 돌아가도록 이벤트 핸들러 추가
-function resetImage(btnClass) {
-  const img = document.querySelector(`.${btnClass} img`);
-
-  // 이미지 초기화
-  img.src = `../nonographic/${btnClass}-01.png`;
-  img.style.transition = "none"; // 트랜지션 효과 제거
-}

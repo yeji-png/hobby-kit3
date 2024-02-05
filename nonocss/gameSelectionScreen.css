@@ -7,7 +7,7 @@
 }*/
 
 body {
-  background-color: #bef5fc;
+  background-color: #cff5ff;
   background-image: url("../nonographic/hobbykit.png");
   background-size: auto 900px; /* 배경 이미지를 가로는 자동, 세로는 900px로 설정 */
   background-position: center;
@@ -25,9 +25,9 @@ body {
 
 .game-selection-screen {
   background-color: transparent;
-  margin-top: 40px;
+  margin-top: 15px;
   margin-bottom: 30px;
-  margin-left: 5px;
+  margin-left: 2px;
   z-index: 30;
   overflow-y: auto;
   width: 65px;
@@ -48,7 +48,7 @@ body {
   height: 100%;
 
   margin-top: auto;
-  margin-left: auto;
+  margin-right: auto;
   overflow-y: auto;
 }
 .image-container {
@@ -93,8 +93,9 @@ body {
 
 .prev-btn:hover,
 .back-to-start-btn:hover,
-.tutorial-btn:hover {
-  background-color: #ffffff;
+.tutorial-btn:hover,
+.game-btn:hover {
+  background-color: #cff5ff;
   mix-blend-mode: difference;
   cursor: url("../nonogram/cursor.png"), auto;
 }
@@ -116,7 +117,7 @@ body {
 }
 
 .game-btn {
-  background-color: #bef5fc;
+  background-color: #ffffff;
 
   margin-right: auto;
 
@@ -135,52 +136,52 @@ body {
   color: #414141;
 
   width: 50px;
-  height: 40px;
+  height: 32px;
   z-index: 1;
 }
 
 .graphic-container div img.image-01 {
-  width: 100px;
+  width: 70px;
   height: auto;
   object-fit: cover;
   margin: 10px;
-  transform: translateX(1000px);
+  transform: translateX(400px);
 }
 
 .graphic-container div img.image-02 {
-  width: 100px;
+  width: 130px;
   height: auto;
   object-fit: cover;
   margin: 10px;
-  transform: translateX(100px);
+  transform: translateX(60px);
 }
 
 .graphic-container div img.image-03 {
   width: 100px;
   height: auto;
   object-fit: cover;
-  margin: 10px;
+  margin: 50px;
   transform: translateX(300px);
 }
 
 .graphic-container div img.image-04 {
-  width: 100px;
+  width: 200px;
   height: auto;
   object-fit: cover;
 
-  transform: translateX(350px);
+  transform: translateX(300px);
 }
 
 .graphic-container div img.image-05 {
-  width: 100px;
+  width: 130px;
   height: auto;
   object-fit: cover;
 
-  transform: translateX(50px);
+  transform: translateX(1650px);
 }
 
 .graphic-container div img.image-06 {
-  width: 100px;
+  width: 150px;
   height: auto;
   object-fit: cover;
   margin: 10px;
@@ -191,70 +192,70 @@ body {
   width: 100px;
   height: auto;
   object-fit: cover;
-
-  transform: translateX(20px);
+  margin: 30px;
+  transform: translateX(1520px);
 }
 
 .graphic-container div img.image-08 {
-  width: 100px;
+  width: 130px;
   height: auto;
   object-fit: cover;
-  margin: 30px;
-  transform: translateX(500px);
+
+  transform: translateX(1700px);
 }
 
 .graphic-container div img.image-09 {
-  width: 100px;
+  width: 150px;
   height: auto;
   object-fit: cover;
-  transform: translateX(200px);
+  transform: translateX(100px);
 }
 
 .graphic-container div img.image-10 {
-  width: 100px;
+  width: 250px;
   height: auto;
   object-fit: cover;
-  transform: translateX(20px);
+  transform: translateX(1450px);
 }
 
 .graphic-container div img.image-11 {
-  width: 100px;
+  width: 200px;
   height: auto;
   object-fit: cover;
-  transform: translateX(400px);
+  transform: translateX(1600px);
 }
 
 .graphic-container div img.image-12 {
-  width: 100px;
+  width: 300px;
   height: auto;
   object-fit: cover;
   transform: translateX(300px);
 }
 
 .graphic-container div img.image-13 {
-  width: 100px;
+  width: 500px;
   height: auto;
   object-fit: cover;
-  transform: translateX(300px);
+  transform: translateX(200px);
 }
 
 .graphic-container div img.image-14 {
-  width: 100px;
+  width: 300px;
   height: auto;
   object-fit: cover;
   margin-bottom: 100px;
-  transform: translateX(100px);
+  transform: translateX(1400px);
 }
 
 .graphic-container div img.image-15 {
   width: 100px;
   height: auto;
   object-fit: cover;
-  transform: translateX(380px);
+  transform: translateX(480px);
 }
 
 .graphic-container div img.image-16 {
-  width: 100px;
+  width: 300px;
   height: auto;
   object-fit: cover;
 
@@ -262,27 +263,27 @@ body {
 }
 
 .graphic-container div img.image-17 {
-  width: 100px;
+  width: 150px;
   height: auto;
   object-fit: cover;
 
-  transform: translateX(250px);
+  transform: translateX(1750px);
 }
 
 .graphic-container div img.image-18 {
-  width: 100px;
+  width: 200px;
   height: auto;
   object-fit: cover;
   margin-bottom: 100px;
-  transform: translateX(580px);
+  transform: translateX(80px);
 }
 
 .graphic-container div img.image-19 {
-  width: 100px;
+  width: 300px;
   height: auto;
   object-fit: cover;
   margin-bottom: 50px;
-  transform: translateX(80px);
+  transform: translateX(1180px);
 }
 .graphic-container div {
   position: relative;
@@ -293,40 +294,51 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
 .graphic-container div .image-text {
-  background-color: rgba(233, 233, 233, 0.423);
-  font-family: "PixgamerRegular", RetrcadeRegular, sans-serif;
+  background-color: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-30%, -50%);
   opacity: 0;
-  color: #ffffff;
-  font-size: 50px;
+  color: #414141;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1000;
+  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 /*grafik container animation*/
 
 .graphic-container div:hover img {
-  transform: scale(1.2);
+  filter: blur(5px); /* 블러 처리 추가 */
 }
 
 .graphic-container div:hover .image-text {
   opacity: 1;
 }
 .graphic-container .image-container .image-text {
-  color: #00000024;
-  transition: color 0.3s ease;
+  color: #414141;
+  background-color: #cff5ff;
+  transition: color 0.2s ease;
 }
 
 .graphic-container .image-container:hover .image-text {
-  color: #868686;
+  color: #414141;
+  background-color: #ffffff;
+}
+/* 호버 시 크기 변환 애니메이션 추가 */
+.graphic-container div:not(:hover) img {
+  transition: none; /* 호버되지 않았을 때 트랜지션 제거 */
 }
 
+.graphic-container div:not(:hover):hover img {
+  transform: scale(1); /* 호버되지 않았을 때 크기 변환 제거 */
+}
 #overlaytutorial {
   z-index: 1000;
   display: none;
@@ -347,8 +359,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(255, 255, 255);
-  width: 400px;
-  height: 400px;
+  width: 800px;
+  height: 800px;
   z-index: 2000;
 }
 #popupclosetutorial {
@@ -373,13 +385,27 @@ body {
   background-color: transparent; /* 트랙의 색상 */
 }
 
-/* 스크롤 바의 핸들 (스크롤 바 자체) 스타일링 */
-::-webkit-scrollbar-thumb {
-  background-color: transparent /* 핸들의 색상 */
-  border-radius: 0px; /* 핸들의 모서리 반경 */
-}
-
 /* 스크롤 바 위에 마우스 오버 시 핸들 스타일링 */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: transparent /* 마우스 오버 시의 핸들 색상 */
+  background-color: transparent; /* 마우스 오버 시의 핸들 색상 */
+}
+
+.game-selection-screen {
+  order: 2; /* 기존에는 1이었던 것을 2로 변경하여 graphic-container보다 뒤로 배치 */
+}
+
+.graphic-container {
+  order: 1; /* 기존에는 2이었던 것을 1로 변경하여 game-selection-screen보다 앞으로 배치 */
+}
+
+/* 작은 화면에 대한 레이아웃 조절을 위한 미디어 쿼리 추가 */
+@media only screen and (max-width: 768px) {
+  .container-wrapper {
+    flex-direction: column; /* 작은 화면에 대해 컬럼 레이아웃으로 변경 */
+  }
+
+  .game-selection-screen,
+  .graphic-container {
+    order: initial; /* order 속성 초기값으로 설정하여 순서를 원래대로 되돌림 */
+  }
 }
