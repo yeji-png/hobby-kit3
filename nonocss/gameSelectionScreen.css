@@ -1,13 +1,18 @@
-/*@font-face {
-  font-family: RetrcadeRegular;
-  src: url("../nonogram/PixgamerRegular.woff") format("woff");
-
+@font-face {
+  font-family: "GeistMono-Regular";
+  src: url("../nonogram/GeistMono-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-}*/
-
+}
+@font-face {
+  font-family: "GeistMono-Regular";
+  src: url("../nonogram/GeistMono-UltraBlack.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  background-color: #cff5ff;
+  font-family: "GeistMono-Regular", sans-serif;
+  background-color: #76eaff;
   background-image: url("../nonographic/hobbykit.png");
   background-size: auto 900px; /* 배경 이미지를 가로는 자동, 세로는 900px로 설정 */
   background-position: center;
@@ -32,7 +37,7 @@ body {
   overflow-y: auto;
   width: 65px;
   z-index: 1;
-  height: 95vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +100,7 @@ body {
 .back-to-start-btn:hover,
 .tutorial-btn:hover,
 .game-btn:hover {
-  background-color: #cff5ff;
+  background-color: #76eaff;
   mix-blend-mode: difference;
   cursor: url("../nonogram/cursor.png"), auto;
 }
@@ -117,8 +122,8 @@ body {
 }
 
 .game-btn {
-  background-color: #ffffff;
-
+  background-color: transparent;
+  font-family: "Geistmono-Regular", sans-serif;
   margin-right: auto;
 
   border: none;
@@ -128,15 +133,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-family: RetrcadeRegular, sans-serif;
-  font-size: 30px;
+  font-size: 27px;
 
   padding: 10px 20px;
   color: #414141;
 
   width: 50px;
-  height: 32px;
+  height: 35px;
   z-index: 1;
 }
 
@@ -299,46 +302,36 @@ body {
 }
 
 .graphic-container div .image-text {
-  background-color: #ffffff;
+  background-color: #76eaff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-30%, -50%);
   opacity: 0;
   color: #414141;
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-family: "GeistMono-Regular", sans-serif;
   z-index: 1000;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 /*grafik container animation*/
 
-.graphic-container div:hover img {
-  filter: blur(5px); /* 블러 처리 추가 */
-}
-
 .graphic-container div:hover .image-text {
   opacity: 1;
 }
 .graphic-container .image-container .image-text {
   color: #414141;
-  background-color: #cff5ff;
+  background-color: #76eaff;
   transition: color 0.2s ease;
 }
 
 .graphic-container .image-container:hover .image-text {
   color: #414141;
-  background-color: #ffffff;
-}
-/* 호버 시 크기 변환 애니메이션 추가 */
-.graphic-container div:not(:hover) img {
-  transition: none; /* 호버되지 않았을 때 트랜지션 제거 */
+
+  background-color: #76eaff;
 }
 
-.graphic-container div:not(:hover):hover img {
-  transform: scale(1); /* 호버되지 않았을 때 크기 변환 제거 */
-}
 #overlaytutorial {
   z-index: 1000;
   display: none;

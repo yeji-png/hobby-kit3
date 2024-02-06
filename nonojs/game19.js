@@ -985,4 +985,168 @@ function populate() {
           thumbnailDiv.classList.add("active");
           thumbnailDiv.classList.add("transparent");
           let currentOpacity = parseFloat(thumbnailDiv.style.opacity) || 0;
-          thumbnailDiv.style.opa
+          thumbnailDiv.style.opacity = Math.min(currentOpacity + 0.3, 1);
+        } else {
+          thumbnailDiv.style.backgroundColor = "white";
+          thumbnailDiv.style.opacity = 1;
+          thumbnailDiv.classList.remove("active");
+          thumbnail.classList.remove("transparent");
+        }
+        isSolved = checkSolved();
+        if (isSolved) {
+          handleSolve();
+        }
+      });
+
+      container.appendChild(div);
+      thumbnail.appendChild(thumbnailDiv);
+    }
+  }
+  for (let i = 0; i < ROW_SIZE; ++i) {
+    const rowClue = document.createElement("div");
+    rowClue.classList.add("row-clue");
+    rowClue.innerHTML =
+      "<span>" + row_clues[i].join("</span><span>") + "</span>";
+    rowClues.appendChild(rowClue);
+  }
+  for (let i = 0; i < COL_SIZE; ++i) {
+    const colClue = document.createElement("div");
+    colClue.classList.add("col-clue");
+    colClue.innerHTML = "<div>" + col_clues[i].join("</div><div>") + "</div>";
+    colClues.appendChild(colClue);
+  }
+  const pixel = document.querySelector(".pixel");
+  const font_size = pixel.offsetHeight / 2 + "px";
+  console.log(font_size);
+  colClues.style.setProperty("--font_size", font_size);
+  rowClues.style.setProperty("--font_size", font_size);
+  window.addEventListener("resize", () => {
+    const pixel = document.querySelector(".pixel");
+    const font_size = pixel.offsetHeight / 2 + "px";
+
+    colClues.style.setProperty("--font_size", font_size);
+    rowClues.style.setProperty("--font_size", font_size);
+  });
+}
+
+window.addEventListener("mousedown", function () {
+  draw = true;
+});
+window.addEventListener("mouseup", function () {
+  draw = false;
+});
+
+populate(size);
+
+const zoomableGame = document.getElementById("zoomableGame");
+let startTouches,
+  currentTouches,
+  isDragging = false;
+let startX,
+  startY,
+  startDistance,
+  currentScale = 1.0;
+
+zoomableGame.addEventListener("mousedown", startDrag);
+zoomableGame.addEventListener("touchstart", startDrag);
+
+function startDrag(event) {
+  event.preventDefault();
+
+  if (event.touches && event.touches.length === 2) {
+    startDistance = getTouchDistance(event.touches);
+  } else {
+    isDragging = true;
+    startX = event.clientX || event.touches[0].clientX;
+    startY = event.clientY || event.touches[0].clientY;
+  }
+
+  document.addEventListener("mousemove", dragMove);
+  document.addEventListener("touchmove", dragMove);
+
+  document.addEventListener("mouseup", stopDrag);
+  document.addEventListener("touchend", stopDrag);
+}
+
+function dragMove(event) {
+  event.preventDefault();
+
+  if (isDragging) {
+    const mouseX = event.clientX || event.touches[0].clientX;
+    const mouseY = event.clientY || event.touches[0].clientY;
+
+    zoomableGame.style.left = mouseX - startX + "px";
+    zoomableGame.style.top = mouseY - startY + "px";
+  } else if (event.touches && event.touches.length === 2) {
+    // 두 손가락을 사용하는 터치 이벤트 처리 (확대/축소)
+    const distance = getTouchDistance(event.touches);
+
+    if (startDistance) {
+      const distanceDelta = distance - startDistance;
+
+      if (distanceDelta > 0) {
+        currentScale *= 1.01;
+      } else {
+        currentScale /= 1.01;
+      }
+
+      zoomableGame.style.transform = "scale(" + currentScale + ")";
+    }
+
+    startDistance = distance;
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  startDistance = null;
+  document.removeEventListener("mousemove", dragMove);
+  document.removeEventListener("touchmove", dragMove);
+  document.removeEventListener("mouseup", stopDrag);
+  document.removeEventListener("touchend", stopDrag);
+}
+
+function getTouchDistance(touches) {
+  const dx = touches[1].clientX - touches[0].clientX;
+  const dy = touches[1].clientY - touches[0].clientY;
+  return Math.sqrt(dx * dx + dy * dy);
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const gameElement = document.querySelector(".game");
+  let currentScale = 1.0;
+
+  document.querySelector(".zoom-in-btn").addEventListener("click", function () {
+    currentScale *= 1.1;
+    applyScale();
+  });
+
+  document
+    .querySelector(".zoom-out-btn")
+    .addEventListener("click", function () {
+      currentScale /= 1.1;
+      applyScale();
+    });
+
+  function applyScale() {
+    gameElement.style.transform = `scale(${currentScale})`;
+  }
+});
+
+const tutorialScreen = document.querySelector(".tutorial-screen");
+
+// Initialize Variables
+var closePopuptutorial = document.getElementById("popupclosetutorial");
+var overlaytutorial = document.getElementById("overlaytutorial");
+var popuptutorial = document.getElementById("popuptutorial");
+var buttontutorial = document.getElementById("buttontutorial");
+// Close Popup Event
+closePopuptutorial.onclick = function () {
+  overlaytutorial.style.display = "none";
+  popuptutorial.style.display = "none";
+};
+// Show Overlay and Popup
+buttontutorial.onclick = function () {
+  console.log("Button Clicked");
+  overlaytutorial.style.display = "block";
+  popuptutorial.style.display = "block";
+};
