@@ -62,20 +62,6 @@ function resetImage(btnClassName) {
   button.src = "../nonographic/" + btnClassName.slice(0, -4) + "01.png";
 }
 
-// 마우스가 game-selection-btn 위로 올라갈 때 이미지 변경
-document
-  .querySelector(".game-selection-btn")
-  .addEventListener("mouseover", function () {
-    changeImage("game-selection-btn", "02");
-  });
-
-// 마우스가 game-selection-btn에서 나갈 때 이미지 리셋
-document
-  .querySelector(".game-selection-btn")
-  .addEventListener("mouseout", function () {
-    resetImage("game-selection-btn");
-  });
-
 // 마우스가 tutorial-btn 위로 올라갈 때 이미지 변경
 document
   .querySelector(".tutorial-btn")
@@ -88,4 +74,18 @@ document
   .querySelector(".tutorial-btn")
   .addEventListener("mouseout", function () {
     resetImage("tutorial-btn");
+  });
+
+// 마우스가 back-to-start-btn 위로 올라갈 때 이미지 변경
+document
+  .querySelector(".back-to-start-btn")
+  .addEventListener("mouseover", function () {
+    changeImage("back-to-start-btn", "02");
+  });
+
+// 마우스가 back-to-start-btn에서 나갈 때 이미지 리셋
+document
+  .querySelector(".back-to-start-btn")
+  .addEventListener("mouseout", function () {
+    resetImage("back-to-start-btn");
   });

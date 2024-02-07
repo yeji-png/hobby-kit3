@@ -1,18 +1,21 @@
 @font-face {
-  font-family: RetrcadeRegular;
-  src: url("../nonogram/PixgamerRegular.woff") format("woff");
+  font-family: "GeistMono-Regular";
+  src: url("../nonogram/GeistMono-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 body {
-  background-color: #9c988b;
-  align-items: center;
-  height: 600px;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  font-family: "GeistMono-Regular", sans-serif;
+  background-color: #acb195;
+  background-image: url("../nonographic/hobbykit.png");
+  background-size: auto 900px; /* 배경 이미지를 가로는 자동, 세로는 900px로 설정 */
+  background-position: center;
+  background-repeat: no-repeat;
 
+  height: 100vh;
+  display: flex;
   margin: 0;
+  overflow: scroll;
 }
 .start-screen {
   display: flex;
@@ -21,51 +24,54 @@ body {
   justify-content: center;
 }
 
-.image-container {
-  max-width: 100%;
-  width: auto;
-}
-.image-container img {
-  width: auto;
-  height: 900px;
-}
-
 .tutorial-btn {
   background-color: transparent;
   border: none;
   z-index: 300;
-  bottom: 5px;
-  right: 5px;
+  bottom: 10px;
+  right: 10px;
   position: fixed;
 }
 .game-selection-btn {
   background-color: transparent;
   border: none;
   z-index: 100;
-  bottom: 5px;
-  left: 5px;
+  bottom: 10px;
+  left: 10px;
   position: fixed;
 }
 .tutorial-btn img,
 .game-selection-btn img,
 .prev-btn img {
-  width: 30px; /* Ensure the images take up the full button space */
+  height: 30px;
+  transition: transform 0.3s ease;
+  opacity: 1;
+}
+.game-selection-btn img[src$="02.png"],
+.tutorial-btn img[src$="02.png"] {
+  width: auto !important; /* game02.png 및 tutorial02.png 이미지의 폭을 조정합니다. */
+  height: 40px !important; /* 이미지 높이를 자동으로 조정합니다. */
 }
 
 .prev-btn {
   background-color: transparent;
   border: none;
   z-index: 100;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   position: fixed;
 }
 .prev-btn:hover,
 .game-selection-btn:hover,
 .tutorial-btn:hover {
-  background-color: #ffffff;
+  background-color: #6b7054;
   mix-blend-mode: difference;
-  cursor: url("../nonogram/cursor.png"), auto;
+}
+.tutorial-btn:hover img,
+.game-selection-btn:hover img,
+.prev-btn:hover img {
+  transform: scale(1.1);
+  opacity: 0.7;
 }
 
 #overlaytutorial {
@@ -87,7 +93,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(255, 255, 255);
+  background: #6b7054;
   width: 800px;
   height: 800px;
   z-index: 2000;

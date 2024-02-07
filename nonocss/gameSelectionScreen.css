@@ -12,17 +12,15 @@
 }
 body {
   font-family: "GeistMono-Regular", sans-serif;
-  background-color: #76eaff;
+  background-color: #acb195;
   background-image: url("../nonographic/hobbykit.png");
   background-size: auto 900px; /* 배경 이미지를 가로는 자동, 세로는 900px로 설정 */
   background-position: center;
   background-repeat: no-repeat;
-
   height: 100vh;
   display: flex;
   margin: 0;
   overflow: scroll;
-  cursor: url("../nonogram/cursor.png"), auto;
 }
 .container-wrapper {
   display: flex;
@@ -30,19 +28,16 @@ body {
 
 .game-selection-screen {
   background-color: transparent;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 30px;
-  margin-left: 2px;
+  margin-left: 20px;
   z-index: 30;
   overflow-y: auto;
-  width: 65px;
-  z-index: 1;
-  height: 80vh;
+  width: 50px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  cursor: url("../nonogram/cursor.png"), auto;
 }
 
 .graphic-container {
@@ -56,43 +51,36 @@ body {
   margin-right: auto;
   overflow-y: auto;
 }
-.image-container {
-  max-width: 100%;
-  width: auto;
-}
-.image-container img {
-  width: auto;
-  height: 800px;
-}
 
 .tutorial-btn {
   background-color: transparent;
   border: none;
   z-index: 300;
-  bottom: 5px;
-  right: 5px;
+  bottom: 10px;
+  right: 10px;
   position: fixed;
 }
 .back-to-start-btn {
   background-color: transparent;
   border: none;
   z-index: 100;
-  bottom: 5px;
-  left: 5px;
+  bottom: 10px;
+  left: 10px;
   position: fixed;
 }
-.tutorial-btn img,
-.back-to-start-btn img,
-.prev-btn img {
-  width: 30px; /* Ensure the images take up the full button space */
+
+.back-to-start-btn img[src$="02.png"],
+.tutorial-btn img[src$="02.png"] {
+  width: auto !important; /* game02.png 및 tutorial02.png 이미지의 폭을 조정합니다. */
+  height: 40px !important; /* 이미지 높이를 자동으로 조정합니다. */
 }
 
 .prev-btn {
   background-color: transparent;
   border: none;
   z-index: 100;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   position: fixed;
 }
 
@@ -100,27 +88,24 @@ body {
 .back-to-start-btn:hover,
 .tutorial-btn:hover,
 .game-btn:hover {
-  background-color: #76eaff;
+  background-color: #6b7054;
   mix-blend-mode: difference;
-  cursor: url("../nonogram/cursor.png"), auto;
 }
 
-.game-selection-btn {
-  font-size: 16px;
-  padding: 8px 15px;
-
-  border: 1px solid;
-  border-radius: 60%;
-  cursor: pointer;
-  width: 5%;
-  height: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, #ffffff, #8b8b8b);
-  cursor: url("../nonogram/cursor.png"), auto;
+.tutorial-btn img,
+.back-to-start-btn img,
+.prev-btn img {
+  height: 30px;
+  transition: transform 0.3s ease;
+  opacity: 1;
 }
 
+.tutorial-btn:hover img,
+.back-to-start-btn:hover img,
+.prev-btn:hover img {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
 .game-btn {
   background-color: transparent;
   font-family: "Geistmono-Regular", sans-serif;
@@ -129,46 +114,45 @@ body {
   border: none;
 
   cursor: pointer;
-
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 27px;
 
   padding: 10px 20px;
   color: #414141;
 
-  width: 50px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   z-index: 1;
 }
 
 .graphic-container div img.image-01 {
-  width: 70px;
+  width: 5vw;
   height: auto;
   object-fit: cover;
-  margin: 10px;
+  margin: 20px;
   transform: translateX(400px);
 }
 
 .graphic-container div img.image-02 {
-  width: 130px;
+  width: 5vw;
   height: auto;
   object-fit: cover;
   margin: 10px;
-  transform: translateX(60px);
+  transform: translateX(1560px);
 }
 
 .graphic-container div img.image-03 {
-  width: 100px;
+  width: 5vw;
   height: auto;
   object-fit: cover;
   margin: 50px;
-  transform: translateX(300px);
+  transform: translateX(100px);
 }
 
 .graphic-container div img.image-04 {
-  width: 200px;
+  width: 5vw;
   height: auto;
   object-fit: cover;
 
@@ -176,7 +160,7 @@ body {
 }
 
 .graphic-container div img.image-05 {
-  width: 130px;
+  width: 8vw;
   height: auto;
   object-fit: cover;
 
@@ -184,7 +168,7 @@ body {
 }
 
 .graphic-container div img.image-06 {
-  width: 150px;
+  width: 9vw;
   height: auto;
   object-fit: cover;
   margin: 10px;
@@ -192,7 +176,7 @@ body {
 }
 
 .graphic-container div img.image-07 {
-  width: 100px;
+  width: 7vw;
   height: auto;
   object-fit: cover;
   margin: 30px;
@@ -200,7 +184,7 @@ body {
 }
 
 .graphic-container div img.image-08 {
-  width: 130px;
+  width: 8vw;
   height: auto;
   object-fit: cover;
 
@@ -208,42 +192,42 @@ body {
 }
 
 .graphic-container div img.image-09 {
-  width: 150px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
   transform: translateX(100px);
 }
 
 .graphic-container div img.image-10 {
-  width: 250px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
   transform: translateX(1450px);
 }
 
 .graphic-container div img.image-11 {
-  width: 200px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
   transform: translateX(1600px);
 }
 
 .graphic-container div img.image-12 {
-  width: 300px;
+  width: 15vw;
   height: auto;
   object-fit: cover;
   transform: translateX(300px);
 }
 
 .graphic-container div img.image-13 {
-  width: 500px;
+  width: 20vw;
   height: auto;
   object-fit: cover;
   transform: translateX(200px);
 }
 
 .graphic-container div img.image-14 {
-  width: 300px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
   margin-bottom: 100px;
@@ -251,14 +235,15 @@ body {
 }
 
 .graphic-container div img.image-15 {
-  width: 100px;
+  width: 8vw;
   height: auto;
   object-fit: cover;
-  transform: translateX(480px);
+  margin-bottom: 100px;
+  transform: translateX(150px);
 }
 
 .graphic-container div img.image-16 {
-  width: 300px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
 
@@ -266,7 +251,7 @@ body {
 }
 
 .graphic-container div img.image-17 {
-  width: 150px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
 
@@ -274,7 +259,7 @@ body {
 }
 
 .graphic-container div img.image-18 {
-  width: 200px;
+  width: 8vw;
   height: auto;
   object-fit: cover;
   margin-bottom: 100px;
@@ -282,10 +267,10 @@ body {
 }
 
 .graphic-container div img.image-19 {
-  width: 300px;
+  width: 10vw;
   height: auto;
   object-fit: cover;
-  margin-bottom: 50px;
+
   transform: translateX(1180px);
 }
 .graphic-container div {
@@ -302,14 +287,14 @@ body {
 }
 
 .graphic-container div .image-text {
-  background-color: #76eaff;
+  background-color: #414141;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-30%, -50%);
   opacity: 0;
-  color: #414141;
-  font-size: 15px;
+  color: #acb195;
+  font-size: 20px;
   font-family: "GeistMono-Regular", sans-serif;
   z-index: 1000;
   pointer-events: none;
@@ -319,17 +304,17 @@ body {
 
 .graphic-container div:hover .image-text {
   opacity: 1;
+  mix-blend-mode: difference;
 }
 .graphic-container .image-container .image-text {
-  color: #414141;
-  background-color: #76eaff;
+  color: #acb195;
+  background-color: #414141;
   transition: color 0.2s ease;
 }
 
 .graphic-container .image-container:hover .image-text {
-  color: #414141;
-
-  background-color: #76eaff;
+  color: #acb195;
+  background-color: #414141;
 }
 
 #overlaytutorial {
@@ -351,7 +336,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(255, 255, 255);
+  background: #6b7054;
   width: 800px;
   height: 800px;
   z-index: 2000;
@@ -389,16 +374,4 @@ body {
 
 .graphic-container {
   order: 1; /* 기존에는 2이었던 것을 1로 변경하여 game-selection-screen보다 앞으로 배치 */
-}
-
-/* 작은 화면에 대한 레이아웃 조절을 위한 미디어 쿼리 추가 */
-@media only screen and (max-width: 768px) {
-  .container-wrapper {
-    flex-direction: column; /* 작은 화면에 대해 컬럼 레이아웃으로 변경 */
-  }
-
-  .game-selection-screen,
-  .graphic-container {
-    order: initial; /* order 속성 초기값으로 설정하여 순서를 원래대로 되돌림 */
-  }
 }

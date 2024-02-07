@@ -1,18 +1,23 @@
+@font-face {
+  font-family: "GeistMono-Regular";
+  src: url("../nonogram/GeistMono-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  background-color: #9c988b;
+  background-color: #acb195;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow-x: scroll;
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
+  font-family: "GeistMono-Regular";
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
@@ -27,9 +32,10 @@ body {
 
 .title {
   max-width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #787878;
-  font-size: 10px;
+  font-family: "GeistMono-Regular";
+  margin-top: auto;
+  color: #414141;
+  font-size: 15px;
 
   cursor: url("../nonogram/cursor.png"), auto;
 }
@@ -44,16 +50,16 @@ body {
   background-color: transparent;
   border: none;
   z-index: 300;
-  bottom: 5px;
-  right: 5px;
+  bottom: 10px;
+  right: 10px;
   position: fixed;
 }
 .back-to-start-btn {
   background-color: transparent;
   border: none;
   z-index: 100;
-  bottom: 5px;
-  left: 5px;
+  bottom: 10px;
+  left: 10px;
   position: fixed;
 }
 .tutorial-btn img,
@@ -68,8 +74,8 @@ body {
   background-color: transparent;
   border: none;
   z-index: 100;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   position: fixed;
 }
 
@@ -78,23 +84,22 @@ body {
   background-color: transparent;
   border: none;
 
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   position: fixed;
 }
 
 .prev-btn:hover,
 .back-to-start-btn:hover,
 .tutorial-btn:hover {
-  background-color: #ffffff;
+  background-color: #6b7054;
   mix-blend-mode: difference;
-  cursor: url("../nonogram/cursor.png"), auto;
 }
 /* game screen */
 .game-screen {
   z-index: 100;
   background-color: transparent;
-
+  font-family: "GeistMono-Regular";
   height: 700px;
   width: 100%;
   margin-top: 40px;
@@ -105,7 +110,7 @@ body {
 
 .thumbnail {
   z-index: 1;
-  background-color: #ffffff;
+  background-color: #acb195;
 
   grid-area: thumbnail;
   display: grid;
@@ -116,7 +121,7 @@ body {
   cursor: url("../nonogram/cursor.png"), auto;
 }
 .thumbnail-pixel {
-  background-color: rgb(242, 242, 242);
+  background-color: #acb195;
   aspect-ratio: 1;
   opacity: 1; /* 브러쉬 투명도 설정 (0~1 사이의 값) */
   filter: blur(px);
@@ -124,7 +129,7 @@ body {
 }
 .container {
   z-index: 1;
-  background: rgb(185, 185, 185);
+  background: #acb195;
 
   grid-area: container;
   display: grid;
@@ -154,11 +159,11 @@ body {
 }
 
 .row-clue {
-  color: #787878;
+  color: #414141;
 
   flex: 1;
   display: flex;
-
+  font-family: "GeistMono-Regular";
   text-align: right;
   font-size: inherit;
   margin-right: 7px;
@@ -173,18 +178,14 @@ body {
   width: 100%;
 
   gap: 1px;
-  font-family: "PixgamerRegular", RetrcadeRegular, sans-serif;
   display: flex;
   flex-direction: row;
   font-size: var(--font_size);
-
-  cursor: url("../nonogram/cursor.png"), auto;
-  src: url("../nonogram/PixgamerRegular-OVD6A.woff") format("woff");
 }
 
 .col-clue {
-  color: #787878;
-
+  color: #414141;
+  font-family: "GeistMono-Regular";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,7 +195,7 @@ body {
   align-self: flex-end;
 }
 .game {
-  background-color: #ffffff;
+  background-color: #acb195;
 
   margin: auto auto;
 
@@ -220,8 +221,9 @@ body {
 }
 
 .pixel {
-  background-color: #ffffff;
-  border-radius: px;
+  background-color: #acb195;
+  border: 1px solid #414141;
+  border-radius: 1px;
   aspect-ratio: 1;
   position: relative;
   transition: background-color 0.3s ease;
@@ -353,7 +355,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(255, 255, 255);
+  background: #6b7054;
   width: 400px;
   height: 400px;
   z-index: 2000;
