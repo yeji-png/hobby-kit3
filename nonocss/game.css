@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "GeistMono-Black";
+  src: url("../nonogram/GeistMono-Black.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background-color: #acb195;
   display: flex;
@@ -17,7 +23,7 @@ body {
   -o-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "GeistMono-Regular";
+
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
@@ -31,20 +37,40 @@ body {
 }
 
 .title {
-  max-width: 100%;
-  font-family: "GeistMono-Regular";
+  font-family: "GeistMono-Black";
+  left: 20px;
   margin-top: auto;
   color: #414141;
-  font-size: 15px;
-
-  cursor: url("../nonogram/cursor.png"), auto;
+  font-size: 30px;
+  position: absolute;
 }
 .prev-btn:hover,
 .back-to-start-btn:hover,
 .tutorial-btn:hover,
-.setting-btn:hover,
 .hint-btn:hover {
-  background-color: #ffcff8;
+  background-color: #6b7054;
+  mix-blend-mode: difference;
+}
+.back-to-start-btn img[src$="02.png"],
+.tutorial-btn img[src$="02.png"],
+.hint-btn img[src$="02.png"] {
+  width: auto !important; /* game02.png 및 tutorial02.png 이미지의 폭을 조정합니다. */
+  height: 40px !important; /* 이미지 높이를 자동으로 조정합니다. */
+}
+.tutorial-btn img,
+.back-to-start-btn img,
+.prev-btn img,
+.hint-btn img {
+  height: 30px;
+  transition: transform 0.3s ease;
+  opacity: 1;
+}
+.tutorial-btn:hover img,
+.back-to-start-btn:hover img,
+.prev-btn:hover img,
+.hint-btn:hover img {
+  transform: scale(1.1);
+  opacity: 0.7;
 }
 .tutorial-btn {
   background-color: transparent;
@@ -102,10 +128,8 @@ body {
   font-family: "GeistMono-Regular";
   height: 700px;
   width: 100%;
-  margin-top: 40px;
-  margin-right: 10px;
-
-  cursor: url("../nonogram/cursor.png"), auto;
+  margin-top: 50px;
+  margin-left: auto;
 }
 
 .thumbnail {
@@ -118,7 +142,6 @@ body {
   grid-template-columns: repeat(var(--col_size), 1fr);
   grid-template-rows: repeat(var(--row_size), 1fr);
   gap: 0px;
-  cursor: url("../nonogram/cursor.png"), auto;
 }
 .thumbnail-pixel {
   background-color: #acb195;
@@ -154,8 +177,6 @@ body {
 
   font-size: var(--font_size);
   font-family: "PixgamerRegular", RetrcadeRegular, sans-serif;
-
-  cursor: url("../nonogram/cursor.png"), auto;
 }
 
 .row-clue {
@@ -195,13 +216,13 @@ body {
   align-self: flex-end;
 }
 .game {
-  background-color: #acb195;
-
+  background-color: transparent;
   margin: auto auto;
-
   width: 800px;
   height: auto;
+
   position: relative;
+
   display: grid;
   grid-template-areas:
     "thumbnail col-clues"
@@ -266,29 +287,19 @@ body {
   filter: blur(5px);
 }
 .setting-btn {
-  z-index: 5;
-  writing-mode: vertical-lr;
-  cursor: url("../nonogram/cursor.png"), auto;
+  z-index: -100;
+
   position: fixed;
   bottom: 50px;
   right: 5px;
 
   font-size: 15px;
+  background-color: transparent;
+  border: none;
 
-  padding: 5px 1px;
-  color: #000000;
-
-  border-radius: 50%;
+  color: transparent;
   cursor: pointer;
-
   display: flex;
-
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Blurred background effect */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Transparent border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-
-  transition: background 0.3s ease; /* Smooth transition for the background */
 
   margin-left: -40px;
 }
@@ -296,22 +307,15 @@ body {
 .brush-board {
   z-index: 400;
   display: flex;
+  align-items: center;
 
-  align-items: flex-end;
-  cursor: url("../nonogram/cursor.png"), auto;
+  flex-direction: column;
   position: fixed;
-  bottom: 80px; /* 적절한 값으로 조정 */
-  right: 5px;
-
-  transform: rotate(0deg); /* 항상 세로 방향으로 표시 */
-  transform-origin: bottom right; /* 회전의 기준점을 지정 */
-}
-.brush-board.horizontal {
-  /* 가로 정렬 시 추가로 필요한 스타일 */
-  flex-direction: row;
-  align-items: flex-start;
-  transform: rotate(-90deg); /* 90도 회전하여 가로 방향으로 표시 */
-  transform-origin: top right; /* 회전의 기준점을 지정 */
+  bottom: 41%;
+  right: 10px;
+  transform: translateY(50%);
+  transform: none; /* 회전 스타일 제거 */
+  transform-origin: initial;
 }
 
 .brush-board .button-img {
@@ -327,15 +331,9 @@ body {
   background-color: transparent;
   cursor: pointer;
   padding: 5px;
-  cursor: url("../nonogram/cursor.png"), auto;
   margin-bottom: 5px;
 }
 
-.button-img {
-  width: 20px; /* 이미지의 크기 조절 */
-  height: 20px;
-  cursor: pointer;
-}
 #overlaytutorial {
   z-index: 1000;
   display: none;

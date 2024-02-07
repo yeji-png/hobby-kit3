@@ -14,8 +14,8 @@ const xButton = document.querySelector(".x-btn");
 let curBrush = "O";
 
 settingButton.addEventListener("click", function () {
-  if (brushBoard.style.display == "none") brushBoard.style.display = "block";
-  else brushBoard.style.display = "none";
+  // brushBoard 요소가 보이는지 여부를 확인하여 클래스를 토글합니다.
+  brushBoard.classList.toggle("visible");
 });
 
 xButton.addEventListener("click", function () {
@@ -783,3 +783,53 @@ buttontutorial.onclick = function () {
   overlaytutorial.style.display = "block";
   popuptutorial.style.display = "block";
 };
+
+// JavaScript로 이미지 변경 함수 정의
+function changeImage(btnClassName, imageNumber) {
+  const button = document.querySelector("." + btnClassName + " img");
+  button.src =
+    "../nonographic/" + btnClassName.slice(0, -4) + imageNumber + ".png";
+}
+
+function resetImage(btnClassName) {
+  const button = document.querySelector("." + btnClassName + " img");
+  button.src = "../nonographic/" + btnClassName.slice(0, -4) + "01.png";
+}
+
+// 마우스가 tutorial-btn 위로 올라갈 때 이미지 변경
+document
+  .querySelector(".tutorial-btn")
+  .addEventListener("mouseover", function () {
+    changeImage("tutorial-btn", "02");
+  });
+
+// 마우스가 tutorial-btn에서 나갈 때 이미지 리셋
+document
+  .querySelector(".tutorial-btn")
+  .addEventListener("mouseout", function () {
+    resetImage("tutorial-btn");
+  });
+
+// 마우스가 back-to-start-btn 위로 올라갈 때 이미지 변경
+document
+  .querySelector(".back-to-start-btn")
+  .addEventListener("mouseover", function () {
+    changeImage("back-to-start-btn", "02");
+  });
+
+// 마우스가 back-to-start-btn에서 나갈 때 이미지 리셋
+document
+  .querySelector(".back-to-start-btn")
+  .addEventListener("mouseout", function () {
+    resetImage("back-to-start-btn");
+  });
+
+// 마우스가 hint-btn 위로 올라갈 때 이미지 변경
+document.querySelector(".hint-btn").addEventListener("mouseover", function () {
+  changeImage("hint-btn", "02");
+});
+
+// 마우스가 hint-btn에서 나갈 때 이미지 리셋
+document.querySelector(".hint-btn").addEventListener("mouseout", function () {
+  resetImage("hint-btn");
+});

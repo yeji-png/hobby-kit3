@@ -14,9 +14,10 @@ const xButton = document.querySelector(".x-btn");
 let curBrush = "O";
 
 settingButton.addEventListener("click", function () {
-  if (brushBoard.style.display == "none") brushBoard.style.display = "block";
-  else brushBoard.style.display = "none";
+  // brushBoard 요소가 보이는지 여부를 확인하여 클래스를 토글합니다.
+  brushBoard.classList.toggle("visible");
 });
+
 
 xButton.addEventListener("click", function () {
   curBrush = "X";
